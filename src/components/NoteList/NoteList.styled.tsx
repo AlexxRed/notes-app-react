@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { SPACES } from '../../services/theme';
 
-export const StyledTodoList = styled.ul`
+export const StyledNoteList = styled.ul`
   width: 50%;
   display: grid;
   margin: ${SPACES.m} auto 0;

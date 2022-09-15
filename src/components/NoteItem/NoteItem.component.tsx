@@ -11,9 +11,9 @@ export const NoteItem = ({ note }: { note: INote }) => {
         <ItemHeader>
             {`${note.name} ${note.created}`}
             <ButtonBox>
-            <Link to={`/${note.id}`}>
+            {/* <Link to={`/${note.id}`}>
                 <EditButton todo={note} />
-            </Link>
+            </Link> */}
             <DeleteButton onClick={() => console.log('delete')} />
             </ButtonBox>
         </ItemHeader>
