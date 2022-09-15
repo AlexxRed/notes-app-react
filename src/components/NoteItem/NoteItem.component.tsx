@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { INote } from '../../services/types/note.types';
-import { ItemContainer, ItemHeader, ItemInfo, ButtonBox } from './NotesItem.styled';
+import { ItemContainer, ItemHeader, ItemInfo, ButtonBox } from './NoteItem.styled';
 import DeleteButton from '../ButtonDelete/ButtonDelete.component';
 import EditButton from '../ButtonEdit/ButtonEdit.component';
 
-export const TodoItem = ({ note }: { note: INote }) => {
+export const NoteItem = ({ note }: { note: INote }) => {
 
     return (
         <ItemContainer>
