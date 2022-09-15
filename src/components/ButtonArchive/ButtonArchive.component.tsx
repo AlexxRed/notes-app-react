@@ -1,9 +1,9 @@
-import { ButtonArchive, ButtonIcon } from './ButtonArchive.styled';
+import { ArchiveButton, ButtonIcon } from './ButtonArchive.styled';
 
-const DeleteButton = ({ onClick }: { onClick: () => void }) => (
-  <ButtonArchive type="button" onClick={onClick}>
+const ButtonArchive = ({ onClick }: { onClick: () => void }) => (
+  <ArchiveButton type="button" onClick={onClick}>
     <ButtonIcon />
-  </ButtonArchive>
+  </ArchiveButton>
 );
 
-export default DeleteButton;
+export default ButtonArchive;

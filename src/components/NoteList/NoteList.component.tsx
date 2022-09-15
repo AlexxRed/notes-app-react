@@ -9,6 +9,5 @@ export const NoteList = ({data}: {data: INote[];}) => (
         <NoteItem note={note} key={note.id} />
       ))}
     </StyledNoteList>
-
   </>
 );

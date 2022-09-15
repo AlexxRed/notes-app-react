@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import ArchiveIcon from '@mui/icons-material/Archive';
+import UnarchiveIcon from '@mui/icons-material/Unarchive';
 import { COLORS, FONTS, SPACES } from '../../services/theme';
 
-export const ArchiveButton = styled.button`
+export const UnarchiveButton = styled.button`
   cursor: pointer;
   margin-left: ${SPACES.m};
   border-radius: 3px;
@@ -15,6 +15,6 @@ export const ArchiveButton = styled.button`
   }
 `;
 
-export const ButtonIcon = styled(ArchiveIcon)`
+export const ButtonIcon = styled(UnarchiveIcon)`
   height: 100%;
 `;

@@ -16,14 +16,6 @@ const initialState = {
 
     archiveItems: [],
 
-    statistic: {
-        totalIdeas: 0,
-        totalArciveIdeas: 0,
-        totalTasks: 0,
-        totalArciveTasks: 0,
-        totalThought: 0,
-        totalArciveThought: 0,
-    }
 };
 
 export const notesSlice = createSlice({
@@ -41,16 +33,6 @@ export const notesSlice = createSlice({
         filterNote(state, action) {
             state.notesItems.filter((item) => item.id !== action.payload);
         },
-        allStatistic(state) {
-            state.statistic.totalIdeas = state.notesItems.filter(item => item.category === "Idea").length || 0
-            state.statistictotalArciveIdeas = state.archiveItems.filter(item => item.category === "Idea").length || 0
-
-            state.statistictotalTasks = state.notesItems.filter(item => item.category === "Task").length || 0
-            state.statistictotalArciveTasks = state.archiveItems.filter(item => item.category === "Task").length || 0
-
-            state.statistictotalThought = state.notesItems.filter(item => item.category === "Random Thought").length || 0
-            state.statistictotalArciveThought = state.archiveItems.filter(item => item.category === "Random Thought").length || 0
-        },
         editNote(state, action) {
             state.notesItems = state.notesItems.filter((item) => item.id !== action.payload.id);
             state.notesItems = state.notesItems.push(action.payload);
@@ -62,8 +44,7 @@ export const notesSlice = createSlice({
         unarchiveNote(state, action) {
             state.notesItems.push(action.payload);
             state.archiveItems = state.archiveItems.filter((item) => item.id !== action.payload.id);
-        }
-
+        },
     }
 });
 
@@ -80,7 +61,6 @@ export const {
     addNote,
     removeNote,
     filterNote,
-    allStatistic,
     editNote,
     addToArcchive,
     unarchiveNote
@@ -88,7 +68,7 @@ export const {
 
 export const getNotesList = state => state.notes.notesItems;
 export const getArchiveList = state => state.notes.archiveItems;
-export const getStatistic = state => state.notes.statistic
+
 
 
     //     [

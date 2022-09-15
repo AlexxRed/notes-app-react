@@ -8,12 +8,11 @@ export const Box = styled.div`
     margin: 0px;
     flex-direction: row;
     background-repeat: no-repeat;
-    background-color: rgb(250, 250, 250);
     background-size: cover;
     background-position: center ;
 `;
 
-export const Text = styled.h3`
+export const Text = styled.h4`
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -25,8 +24,8 @@ export const Text = styled.h3`
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 350px;
-    color: #33a02f86;
+    margin-top: 50px;
+    color: #23252385;
 `;
 
 /* background-image: url(${chef}); */

@@ -1,9 +1,14 @@
-import { Box } from './ArchivePage.styled';
+import { useSelector } from 'react-redux';
+import { Box, Text } from './ArchivePage.styled';
+import { getArchiveList } from '../../redux/notesSlice';
+import { NoteList } from '../../components/NoteList/NoteList.component';
 
 function ArchivePage() {
+    const notesArchive = useSelector(getArchiveList)
     return (
         <Box>
-            <p>archive</p>
+            <Text>Archive</Text>
+            <NoteList data={notesArchive} />
         </Box>
         
     )

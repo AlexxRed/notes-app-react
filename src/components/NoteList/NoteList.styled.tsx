@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { SPACES } from '../../services/theme';
 
 export const StyledNoteList = styled.ul`
+  list-style: none;
   width: 50%;
   display: grid;
   margin: ${SPACES.m} auto 0;

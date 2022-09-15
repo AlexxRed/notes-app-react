@@ -1,7 +1,6 @@
 import { ButtonEdit, ButtonIcon } from './ButtonEdit.styled';
 
-const EditButton = ({ todo }: { todo: object }) => {
-  console.log(todo);
+const EditButton = ({ onClick }: { onClick: () => void }) => {
   return (
     <ButtonEdit>
       <ButtonIcon />
