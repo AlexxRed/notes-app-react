@@ -17,12 +17,13 @@ import EditButton from '../ButtonEdit/ButtonEdit.component';
 import ButtonArchive from '../ButtonArchive/ButtonArchive.component';
 import  ButtonUnarchive  from '../ButtonUnarchive/ButtonUnarchive.component';
 import { getArchiveList } from '../../redux/notesSlice';
-import { removeNote, addToArcchive, unarchiveNote } from '../../redux/notesSlice';
+import { removeNote, addToArcchive, unarchiveNote, setActiveNote } from '../../redux/notesSlice';
 
 
 export const NoteItem = ({ note }: { note: INote }) => {
     const notesArchive = useSelector(getArchiveList)
     const dispatch = useDispatch();
+
 
     const deleteNote = (id: string) => {
         dispatch(removeNote(id))
@@ -34,6 +35,11 @@ export const NoteItem = ({ note }: { note: INote }) => {
 
     const unArchiveNote = (note: INote) => {
         dispatch(unarchiveNote(note))
+    }
+
+    const setActive = (note: INote) => {
+        console.log(note)
+        dispatch(setActiveNote(note))
     }
 
     const isArchive = notesArchive.find((item: INote) => item.id === note.id)
@@ -53,9 +59,9 @@ export const NoteItem = ({ note }: { note: INote }) => {
                     {isArchive && <ButtonUnarchive onClick={() => unArchiveNote(note)} />}
                     {!isArchive && (
                         <>
-                    <EditButton onClick={()=> console.log('edit') } />
-                    <ButtonArchive onClick={() => pushToArchive(note)}/>    
-                    <DeleteButton onClick={() => deleteNote(note.id)} />
+                            <EditButton onClick={()=> setActive(note)} />
+                            <ButtonArchive onClick={() => pushToArchive(note)}/>    
+                            <DeleteButton onClick={() => deleteNote(note.id!)} />
                         </>)}
                 </ButtonBox>
 

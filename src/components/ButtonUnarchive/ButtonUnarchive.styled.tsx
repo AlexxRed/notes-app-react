@@ -9,9 +9,10 @@ export const UnarchiveButton = styled.button`
   background-color: ${COLORS.black};
   color: ${COLORS.white};
   font-weight: ${FONTS.WEIGHTS};
+  border: 0px;
   &:hover,
   &:focus {
-    background-color: ${COLORS.secondary};
+    background-color: ${COLORS.red};
   }
 `;
 

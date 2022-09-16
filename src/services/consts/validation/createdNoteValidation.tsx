@@ -1,9 +1,6 @@
 import * as yup from 'yup';
 
 const createdNoteValidation = yup.object({
-  id: yup
-    .string()
-    .required(),
   name: yup
     .string()
     .min(3, 'Min value 1.')
@@ -15,9 +12,6 @@ const createdNoteValidation = yup.object({
     .max(30, 'Max value 1000.')
     .required('Title is required')
     .required('Description name is required'),
-  created: yup
-    .string()
-    .required('Date created is required'),
   category: yup
     .string()
     .required('Category created is required'),

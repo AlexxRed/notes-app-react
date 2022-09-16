@@ -11,8 +11,9 @@ export const ButtonDelete = styled.button`
   font-weight: ${FONTS.WEIGHTS};
   &:hover,
   &:focus {
-    background-color: ${COLORS.secondary};
+    background-color: ${COLORS.red};
   }
+  border: 0px;
 `;
 
 export const ButtonIcon = styled(DeleteForeverIcon)`

@@ -9,7 +9,6 @@ export const Box = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center ;
-
 `;
 
 export const Text = styled.h4`

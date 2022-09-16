@@ -7,11 +7,13 @@ export const Box = styled.div`
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: ${COLORS.grey};
+  background-color: #808080b5;
   border-radius: ${SPACES.m};
   padding: ${SPACES.m};
+  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
+  width: 450px;
 `;
 
 export const FormTitle = styled.h1`
@@ -21,6 +23,14 @@ export const FormTitle = styled.h1`
   justify-content: center;
   align-items: center;
   margin-top: auto;
+`;
+
+export const FormText = styled.h4`
+  font-weight: ${FONTS.WEIGHTS.normal};
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const CreateNote = styled(Form)`
@@ -85,3 +95,9 @@ export const FormButton = styled.button`
     width: 100%;
   }
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`

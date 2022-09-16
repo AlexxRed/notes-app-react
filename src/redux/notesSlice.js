@@ -14,7 +14,11 @@ const initialState = {
     { id: '7', name: 'Stop', created: 'September 12, 2022', category: 'Idea',  content: 'do not watch movies', dates: '12/11/2021, 13/12/2022'},
     ],
 
-    archiveItems: [],
+    archiveItems: [
+        { id: '8', name: 'Personal Task', created: 'September 11, 2022', category: 'Random Thought', content: 'Help my brother', dates: '12/11/2021, 23/12/2022'},
+        { id: '9', name: 'Create something', created: 'September 16, 2022', category: 'Task', content: 'clean my flat', dates: '12/11/2021, 13/12/2022' },
+    ],
+    active: ''
 
 };
 
@@ -35,7 +39,7 @@ export const notesSlice = createSlice({
         },
         editNote(state, action) {
             state.notesItems = state.notesItems.filter((item) => item.id !== action.payload.id);
-            state.notesItems = state.notesItems.push(action.payload);
+            state.notesItems.push(action.payload);
         },
         addToArcchive(state, action) {
             state.archiveItems.push(action.payload);
@@ -45,6 +49,9 @@ export const notesSlice = createSlice({
             state.notesItems.push(action.payload);
             state.archiveItems = state.archiveItems.filter((item) => item.id !== action.payload.id);
         },
+        setActiveNote(state, action) {
+            state.active = action.payload
+        }
     }
 });
 
@@ -63,28 +70,11 @@ export const {
     filterNote,
     editNote,
     addToArcchive,
-    unarchiveNote
+    unarchiveNote,
+    setActiveNote
 } = notesSlice.actions;
 
 export const getNotesList = state => state.notes.notesItems;
 export const getArchiveList = state => state.notes.archiveItems;
+export const getActive = state => state.notes.active;
 
-
-
-    //     [
-    //     {
-    //         category: 'Idea',
-    //         active: 0,
-    //         archived: 0
-    //     },
-    //     {
-    //         category: 'Task',
-    //         active: 0,
-    //         archived: 0
-    //     },
-    //     {
-    //         category: 'Random Thought',
-    //         active: 0,
-    //         archived: 0
-    //     }
-    // ]
