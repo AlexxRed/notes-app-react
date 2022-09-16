@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
 import {
     persistStore,
     FLUSH,
@@ -22,7 +21,7 @@ export const store = configureStore({
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
         }
-    ),logger]
+    )]
 });
 
 export const persistor = persistStore(store);

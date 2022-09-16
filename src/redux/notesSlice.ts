@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { INote } from '../services/types/note.types';
 
 
 const initialState = {
@@ -74,7 +75,13 @@ export const {
     setActiveNote
 } = notesSlice.actions;
 
-export const getNotesList = state => state.notes.notesItems;
-export const getArchiveList = state => state.notes.archiveItems;
-export const getActive = state => state.notes.active;
+interface IState {
+    notesItems: INote[] | [];
+    archiveItems: INote[] | [];
+    active: any;
+}
+
+export const getNotesList = ({notes}:{notes: IState}) => notes.notesItems;
+export const getArchiveList = ({notes}:{notes: IState}) => notes.archiveItems;
+export const getActive = ({notes}:{notes: IState}) => notes.active;
 
